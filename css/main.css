@@ -1,0 +1,12 @@
+#grid {
+    display: grid;
+    /* grid-template-columns: repeat(100, 4rem);
+    /* grid-template-rows: repeat(100, 4rem); */
+    /* width: 400rem;
+    height: 400rem; */
+    border: 1px solid black;
+}
+
+.space {
+    border: 1px solid black;
+}
