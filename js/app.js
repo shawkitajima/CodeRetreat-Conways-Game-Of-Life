@@ -4,7 +4,7 @@ init(100);
 function init(n) {
     createBoard(n);
     let initialArr = generateRandom(n);
-    setTimeout(generateNext(initialArr), 0);
+    generateNext(initialArr);
 }
 
 function createBoard(n) {
@@ -54,12 +54,12 @@ function generateNext(arr) {
     renderBoard(nextBoard);
     setTimeout(function() {
         generateNext(nextBoard);
-    }, 200)
+    }, 100)
 }
 
 function renderBoard(arr) {
     arr.forEach((space, idx) => {
-        if (space === 1) document.getElementById(idx).style.backgroundColor = 'green';
+        if (space === 1) document.getElementById(idx).style.backgroundColor = 'turquoise';
         else {
             document.getElementById(idx).style.backgroundColor = 'white'
         }
