@@ -54,7 +54,7 @@ function generateNext(arr) {
     renderBoard(nextBoard);
     setTimeout(function() {
         generateNext(nextBoard);
-    }, 100)
+    }, 100);
 }
 
 function renderBoard(arr) {

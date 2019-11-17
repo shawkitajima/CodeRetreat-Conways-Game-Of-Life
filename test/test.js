@@ -29,9 +29,3 @@ describe('checkSurroundings', function() {
         assert.equal(checkSurroundings([1, 1, 1, 1, 1, 1, 1, 1, 1], 8), 3);
     });
 })
-
-// describe('generateNext', function() {
-//     it ('should return return Hello', function() {
-//         assert.equal(generateNext([0, 1, 1, 1, 0, 1, 0, 0, 1]), []);
-//     });
-// });zz
