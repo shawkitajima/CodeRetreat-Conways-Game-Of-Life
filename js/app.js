@@ -4,7 +4,7 @@ let spaces = document.querySelectorAll('.space');
 
 /*----- functions -----*/
 let check = 0;
-init(10);
+init(100);
 
 function init(n) {
     createBoard(n);
@@ -27,25 +27,26 @@ function checkSurroundings(arr, idx) {
 }
 
 function generateNext(arr) {
-    if (check >= 500) return;
+    if (check >= 5000) return;
     let nextBoard = [];
     arr.forEach(function(cell, idx) {
-    let liveCells = checkSurroundings(arr, idx)
-        if (arr.idx) {
-            if (liveCells === 2 || liveCells === 3) return nextBoard.push(1);
+        let liveCells = checkSurroundings(arr, idx)
+        if (cell) {
+            if (liveCells === 2 || liveCells === 3) nextBoard.push(1);
             else {
                 nextBoard.push(0);
             }
         }
         else {
-            if (liveCells === 3) return nextBoard.push(1);
+            if (liveCells === 3) nextBoard.push(1);
             else {
                 nextBoard.push(0);
             }
         }
     })
     check++;
-    renderBoard(arr);
+    setTimeout(renderBoard(nextBoard), 2000);
+    // setTimeout(generateNext(nextBoard), 2000);
 }
 
 function createBoard(n) {
@@ -63,11 +64,13 @@ function createBoard(n) {
 }
 
 function renderBoard(arr) {
-    spaces.forEach(space => space.style.backgroundColor = 'white');
     arr.forEach((space, idx) => {
         if (space === 1) document.getElementById(idx).style.backgroundColor = 'green';
+        else {
+            document.getElementById(idx).style.backgroundColor = 'white'
+        }
     });
-    generateNext(arr);
+    setTimeout(generateNext(arr), 5000);
 }   
 
 function generateRandom(n) {
