@@ -1,5 +1,5 @@
 /*----- functions -----*/
-init(100);
+init(300);
 
 function init(n) {
     createBoard(n);
